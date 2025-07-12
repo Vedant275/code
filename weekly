@@ -27,3 +27,55 @@ public class Main {
     }else { System.out.println("The word is not a palindrome");}
   }
 }
+
+
+
+
+//Q2. Sort an array
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the 1 number");
+        int num1 = sc.nextInt();
+        System.out.println("Enter the 2 number");
+        int num2 = sc.nextInt();
+        System.out.println("Enter the 3 number");
+        int num3 = sc.nextInt();
+        System.out.println("Enter the 4 number");
+        int num4 = sc.nextInt();
+        System.out.println("Enter the 5 number");
+        int num5 = sc.nextInt();
+        System.out.println("Enter the 6 number");
+        int num6 = sc.nextInt();
+        System.out.println("Enter the 7 number");
+        int num7 = sc.nextInt();
+        System.out.println("Enter the 8 number");
+        int num8 = sc.nextInt();
+        System.out.println("Enter the 9 number");
+        int num9 = sc.nextInt();
+        int numbers[] = {num1,num2,num3,num4,num5,num6,num7,num8,num9};
+        for (int pos = 0; pos < numbers.length; pos++) {
+            //System.out.println(numbers[pos]);
+            for (int i = (pos+1); i < numbers.length; i++) {
+              //  System.out.println(numbers[i]);
+                if (numbers[pos] > numbers[i]) {
+                    int temp;
+                    temp = numbers[i];
+                    numbers[i] = numbers[pos];
+                    numbers[pos] = temp;
+                }
+            }
+        }
+        for (int j = 0 ;j < numbers.length; j++) {
+            System.out.println(numbers[j]);
+        }
+    }
+}
+/* dry run
+pos                 i                   pos> i
+9                   8                   yes so pos = 8 and i = 9
+
+
+
+*/
