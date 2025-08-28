@@ -22,6 +22,5 @@ public class Main {
         }else {
             System.out.println("The array is not sorted");
         }
-
     }
 }
