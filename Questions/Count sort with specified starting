@@ -1,0 +1,41 @@
+import java.util.*;
+public class Main {
+    public static int countdigit(int n) {
+        int digitCount = 0;
+        int v = 1;
+        while((n/v) != 0) {        // here we check if the number when divided 10 or 100 or so on we dont get 0 as a value
+            v *= 10;              // here we increment v by product of 10 so that we get the further digits in the number
+            digitCount++;
+        }
+        return digitCount;
+    }
+    public static void getCountSorted(int[] sample,int digitCount) {
+        int[] count = new int[101];
+        int baseValue = (int) Math.pow(10,digitCount - 1);
+        for (int j = 0 ; j < sample.length; j++) {
+            count[sample[j] - baseValue]++;          // By using this loop we just count the number of digits that starts from 0-99 so that the array doesn;t take unnecessary size
+        }
+        int index = 0;
+        for (int i = 0; i < 100; i++) {
+            while (count[i] > 0) {          // in this step if the number comes zero times it is skipped so sorted array is made
+                sample[index++] = baseValue + i;
+                count[i]--;         // if a number comes 2 times and its printed 1 time it remains to be printed 1 time so substracted
+            }
+        }
+        for (int j = 0; j < sample.length; j++) {
+            System.out.println(sample[j]);     // the sorted array is printed
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements to add in the array");
+        int n = sc.nextInt();
+        int[] sample = new int[n];
+        for(int i = 0; i < n; i++){
+            System.out.println("Enter the " + (i + 1) + "element of the array ");
+            sample[i] = sc.nextInt();
+        }
+        int digitCount =  countdigit(sample[0]);
+        getCountSorted(sample,digitCount );
+    }
+}
