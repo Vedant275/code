@@ -1,13 +1,13 @@
 import java.util.*;
 public class Main {
-    static boolean checktarget(int[] arr, int v) {
-        HashMap<Integer,Integer> map = new HashMap<>();
+    static boolean checkTarget(int[] arr, int v) {
+        HashMap<Integer,boolean> map = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
-            int complement = v - arr[i];
-            if (map.containsKey(arr[i])) {
+            int complement = v - arr[i];              // finded the difference between the target number and the element itself and storing in a variable
+            if (map.containsKey(arr[i])) {      // checking if the number which needs to be added to the current number exists as the key or not
                 return true;
             }
-            map.put(complement, i);
+            map.put(complement, true);      // if the condition turns out to be false we save back the subtracted number to the as the key and true as the value
         }
        return false;
     }
@@ -20,6 +20,6 @@ public class Main {
             System.out.println("Enter the number: " + (i + 1));
             arr[i] = sc.nextInt();
         }
-        System.out.println(checktarget(arr, 6));
+        System.out.println(checkTarget(arr, 6));
     }
 }
