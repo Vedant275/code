@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main {
+    static void  checktarget(int[] arr, int v) {
+            HashMap<Integer,Integer> map = new HashMap<>();
+            for (int i = 0; i < arr.length; i++) {
+                int complement = v - arr[i];
+                if (map.containsKey(arr[i])) {
+                    System.out.println("Pair found: " + i + " + " + map.get(complement) + " = " + v);
+                    return;
+                }
+                map.put(complement, i);
+            }
+            System.out.println("Pair not found");
+    }
+   public static void main(String[] args) {
+          System.out.println("Enter the number of the values in the array");
+          Scanner sc = new Scanner(System.in);
+          int n = sc.nextInt();
+          int[] arr = new int[n];
+          for (int i = 0; i < n; i++) {
+              System.out.println("Enter the number: " + (i + 1));
+              arr[i] = sc.nextInt();
+          }
+          checktarget(arr, 10);
+    }
+}
+    
