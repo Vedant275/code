@@ -4,7 +4,7 @@ public class Main {
         int index = 0;
         int v = 1;
         while((n / v) != 0) {   // here we check if the number when divided 10 or 100 or so on we dont get 0 as a value
-            v *= 10;     // here we incriment v by product of 10 so that we get the further digits in the number
+            v *= 10;     // here we increment v by product of 10 so that we get the further digits in the number
             index++;
         }
         return index;
