@@ -1,0 +1,35 @@
+/*
+Q.What if we don't print but need the values / indices in return from the function.
+In this question we need to return both the values from the function instead of
+just printing them (using print command)
+*/
+import java.util.*;
+public class Main {
+  static int[] returnPairWithSum(int[] arr, int v) {
+          HashMap<Integer, Boolean> map = new HashMap<>();    
+          // hashmap created to store the value of number and its linked indice   
+          for (int i = 0; i < arr.length; i++) {
+              int requiredNumber = v - arr[i];
+              if (map.containsKey(requiredNumber)) {       /* Check if the indice already
+              exists or not */
+                  return new int[]{requiredNumber,arr[i]};
+              }
+              map.put(requiredNumber,true);                // return the values as a pair
+          }
+          return new int[]{-1,-1};
+      }
+  public static void main(String[] args) {
+          System.out.println("Enter the number of the values in the array");
+          Scanner sc = new Scanner(System.in);
+          int n = sc.nextInt();
+          int[] arr = new int[n];
+          for (int i = 0; i < n; i++) {
+              System.out.println("Enter the number: " + (i + 1));
+              arr[i] = sc.nextInt();
+          }
+         int[] result = returnPairWithSum(arr, 6);
+        System.out.println(result[0] + " " + result[1]);    // print that pair as a array
+      }
+  }
+
+    
