@@ -10,11 +10,11 @@ public class Main {
           // hashmap created to store the value of number and its linked indice   
           for (int i = 0; i < arr.length; i++) {
               int requiredNumber = v - arr[i];
-              if (map.containsKey(requiredNumber)) {       /* Check if the indice already
+              if (map.containsKey(requiredNumber)) {         /* Check if the indice already
               exists or not */
                   return new int[]{requiredNumber,arr[i]};
               }
-              map.put(requiredNumber,true);                // return the values as a pair
+              map.put(requiredNumber,true);                  // return the values as a pair
           }
           return new int[]{-1,-1};
       }
@@ -28,7 +28,7 @@ public class Main {
               arr[i] = sc.nextInt();
           }
          int[] result = returnPairWithSum(arr, 6);
-        System.out.println(result[0] + " " + result[1]);    // print that pair as an array
+        System.out.println(result[0] + " " + result[1]);    // print that returned values as an array
       }
   }
 
