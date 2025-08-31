@@ -28,7 +28,7 @@ public class Main {
               arr[i] = sc.nextInt();
           }
          int[] result = returnPairWithSum(arr, 6);
-        System.out.println(result[0] + " " + result[1]);    // print that pair as a array
+        System.out.println(result[0] + " " + result[1]);    // print that pair as an array
       }
   }
 
